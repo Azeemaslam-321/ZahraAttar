@@ -19,10 +19,16 @@ export const coreLucknowAreas = [
 export const lucknowSeoKeywords = [
   'attar shop in Lucknow',
   'best attar in Lucknow',
+  'online attar shop Lucknow',
+  'attar delivery Lucknow',
   'alcohol free attar Lucknow',
   'oud attar Lucknow',
   'musk attar Lucknow',
   'rose attar Lucknow',
+  'sandalwood attar Lucknow',
+  'luxury attar Lucknow',
+  'Arabic attar Lucknow',
+  'attar gift hamper Lucknow',
   'Eid attar Lucknow',
   'Jumma attar Lucknow',
   'nikah gift attar Lucknow',
@@ -34,9 +40,14 @@ export const lucknowSeoKeywords = [
   'attar in Saadatganj Lucknow',
   'attar in Aliganj Lucknow',
   'attar in Hazratganj Lucknow',
+  'attar in Gomti Nagar Lucknow',
+  'attar in Indira Nagar Lucknow',
 ];
 export const lucknowAudienceLine =
-  'Alcohol-free attars for Eid, Jumma, nikah gifting, daily wear, and fragrance lovers across Lucknow.';
+  'Alcohol-free attars selected for Eid gifting, Jumma wear, nikah moments, daily use, and fragrance lovers across old Lucknow and new Lucknow.';
+
+export const brandStoryLine =
+  'Zahra Attars brings together classic oud depth, clean white musk, floral rose softness, and gifting-friendly blends in a format that feels elegant, local, and easy to order.';
 
 export function createWhatsAppLink(message: string) {
   return `https://wa.me/${storePhoneDigits}?text=${encodeURIComponent(message)}`;

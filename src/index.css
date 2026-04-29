@@ -71,6 +71,7 @@ html {
     radial-gradient(circle at top, rgba(143, 78, 56, 0.18), transparent 32%),
     radial-gradient(circle at 20% 80%, rgba(95, 111, 82, 0.12), transparent 30%),
     var(--bg-main);
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -79,6 +80,8 @@ body {
     var(--bg-main);
   color: var(--text-primary);
   transition: background-color 0.25s ease, color 0.25s ease;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
 }
 
 body::before {
@@ -131,12 +134,15 @@ body::before {
 }
 
 img {
+  display: block;
+  max-width: 100%;
   -webkit-user-drag: none;
 }
 
 a,
 button {
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body,
@@ -151,4 +157,18 @@ section {
     border-color 0.25s ease,
     color 0.25s ease,
     box-shadow 0.25s ease;
+}
+
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+@supports (padding: max(0px)) {
+  body {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
 }

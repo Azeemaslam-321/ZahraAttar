@@ -38,14 +38,14 @@ export default function Navbar() {
             : 'bg-transparent'
         }`}
       >
-        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:h-20 sm:px-6 lg:px-8">
+        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-2 px-4 sm:h-20 sm:gap-3 sm:px-6 lg:px-8">
           <Link to="/" className="group flex min-w-0 items-center gap-2.5 sm:gap-3">
             <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-[var(--line-soft)] bg-[linear-gradient(135deg,#d8c08c,#7d4a35)] shadow-[0_12px_24px_rgba(125,74,53,0.25)] sm:h-10 sm:w-10">
               <span className="font-serif text-base font-bold text-[var(--bg-main)] sm:text-lg">Z</span>
             </div>
             <div className="flex min-w-0 flex-col">
-              <span className="truncate font-serif text-sm tracking-[0.14em] text-[var(--text-primary)] sm:text-lg sm:tracking-[0.18em]">ZAHRA</span>
-              <span className="truncate text-[9px] uppercase tracking-[0.24em] text-[var(--text-muted)] sm:text-[10px] sm:tracking-[0.34em]">Lucknow Attars</span>
+              <span className="truncate font-serif text-[13px] tracking-[0.12em] text-[var(--text-primary)] sm:text-lg sm:tracking-[0.18em]">ZAHRA</span>
+              <span className="truncate text-[8px] uppercase tracking-[0.22em] text-[var(--text-muted)] sm:text-[10px] sm:tracking-[0.34em]">Lucknow Attars</span>
             </div>
           </Link>
 
@@ -75,7 +75,7 @@ export default function Navbar() {
             ))}
           </div>
 
-          <div className="flex shrink-0 items-center gap-2 sm:gap-3">
+          <div className="flex shrink-0 items-center gap-1.5 sm:gap-3">
             <button
               onClick={toggleTheme}
               className="flex h-10 w-10 items-center justify-center rounded-full border border-[var(--nav-border)] bg-[var(--control-surface)] text-[var(--text-secondary)] transition hover:border-[var(--accent-gold)] hover:text-[var(--accent-gold)] sm:h-11 sm:w-11"
@@ -124,13 +124,14 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
             transition={{ duration: 0.25 }}
-            className="fixed inset-x-0 top-16 z-40 border-b border-[var(--nav-border)] bg-[var(--overlay-surface)] px-4 py-5 backdrop-blur-xl md:hidden sm:top-18 sm:px-5 sm:py-6"
+            className="fixed inset-x-0 top-16 z-40 border-b border-[var(--nav-border)] bg-[var(--overlay-surface)] px-4 py-5 backdrop-blur-xl md:hidden sm:top-20 sm:px-5 sm:py-6"
           >
             <div className="flex flex-col gap-5">
               {navLinks.map((link) => (
                 <NavLink
                   key={link.name}
                   to={link.to}
+                  onClick={() => setMobileOpen(false)}
                   className={({ isActive }) =>
                     `text-xl font-serif transition-colors ${
                       isActive ? 'text-[var(--accent-gold)]' : 'text-[var(--text-primary)]'

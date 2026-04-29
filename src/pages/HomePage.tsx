@@ -4,20 +4,20 @@ import { Link } from 'react-router-dom';
 import PageHero from '../components/PageHero';
 import Seo from '../components/Seo';
 import { categories, products } from '../data/products';
-import { coreLucknowAreas, lucknowAudienceLine, lucknowSeoKeywords } from '../data/storeInfo';
+import { brandStoryLine, coreLucknowAreas, lucknowAudienceLine, lucknowSeoKeywords } from '../data/storeInfo';
 
 const houseCodes = [
   {
-    title: 'Lucknow Focus',
-    copy: 'Built for online attar selling in Lucknow with local delivery language, festive gifting demand, and WhatsApp-first conversion.',
+    title: 'Curated for Lucknow',
+    copy: 'A collection shaped around the fragrance taste of Lucknow: rich oud, soft rose, clean musk, and gifting blends that feel graceful from the first look.',
   },
   {
-    title: 'Traditional Relevance',
-    copy: 'Content now speaks to oud, musk, rose, Eid gifting, Jumma wear, nikah orders, and old Lucknow fragrance taste.',
+    title: 'Built to Be Gifted',
+    copy: 'From Eid gifting to nikah hampers and Jumma favourites, every section is written to help buyers quickly understand what suits the moment.',
   },
   {
-    title: 'Broad Appeal',
-    copy: 'The store leads with traditional attar preferences and still stays open for all fragrance buyers across Lucknow.',
+    title: 'Modern Buying Flow',
+    copy: 'The shopping experience stays simple on phone screens, with direct collection browsing, easy checkout, and WhatsApp ordering when someone wants help.',
   },
 ];
 
@@ -36,30 +36,31 @@ export default function HomePage() {
         title="Best Attar Shop in Lucknow | Zahra Attars Online"
         description="Shop alcohol-free attars in Lucknow with oud, musk, rose, and sandalwood options. Ideal for Eid, Jumma, nikah gifting, and daily wear across Chowk, Aminabad, Kaiserbagh, Nakhas, Aliganj, Hazratganj, and more."
         keywords={lucknowSeoKeywords}
+        path="/"
       />
       <PageHero
         eyebrow="Lucknow Attar Delivery"
         title={
           <>
-            Buy attars online in
-            <span className="text-[var(--accent-gold)]"> Lucknow for gifting, daily wear, and festive use.</span>
+            Original attars for
+            <span className="text-[var(--accent-gold)]"> Lucknow buyers who want elegance, depth, and lasting fragrance.</span>
           </>
         }
-        description={`Zahra Attars brings alcohol-free oud, musk, rose, and sandalwood fragrances to Lucknow with easy WhatsApp ordering and local delivery relevance. ${lucknowAudienceLine}`}
+        description={`Zahra Attars is designed for customers who want a refined online attar experience in Lucknow. ${brandStoryLine} ${lucknowAudienceLine}`}
         image="/images/hero-attar.jpg"
         accent="rgba(122, 74, 53, 0.48)"
         actions={
           <>
             <Link
               to="/collection"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-[linear-gradient(135deg,#dcc58d,#8f4e38)] px-7 py-3.5 text-[11px] uppercase tracking-[0.28em] text-[#120f0b]"
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[linear-gradient(135deg,#dcc58d,#8f4e38)] px-6 py-3.5 text-[10px] uppercase tracking-[0.24em] text-[#120f0b] sm:px-7 sm:text-[11px] sm:tracking-[0.28em]"
             >
               Shop Lucknow Collection
               <ArrowRight size={14} />
             </Link>
             <Link
               to="/ritual"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-[var(--line-soft)] px-7 py-3.5 text-[11px] uppercase tracking-[0.28em] text-[var(--text-primary)] transition hover:border-[var(--accent-sage)] hover:text-[var(--accent-sage)]"
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-[var(--line-soft)] px-6 py-3.5 text-[10px] uppercase tracking-[0.24em] text-[var(--text-primary)] transition hover:border-[var(--accent-sage)] hover:text-[var(--accent-sage)] sm:px-7 sm:text-[11px] sm:tracking-[0.28em]"
             >
               Find by Occasion
             </Link>
@@ -81,10 +82,10 @@ export default function HomePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-80px' }}
               transition={{ duration: 0.5, delay: index * 0.08 }}
-              className="border border-white/10 bg-[var(--panel-soft)] p-7"
+              className="border border-[var(--line-soft)] bg-[var(--panel-soft)] p-6 sm:p-7"
             >
               <p className="text-[11px] uppercase tracking-[0.28em] text-[var(--accent-rust)]">{code.title}</p>
-              <p className="mt-4 text-base leading-8 text-[var(--text-secondary)]">{code.copy}</p>
+              <p className="mt-4 text-[15px] leading-7 text-[var(--text-secondary)] sm:text-base sm:leading-8">{code.copy}</p>
             </motion.div>
           ))}
         </div>
@@ -107,7 +108,7 @@ export default function HomePage() {
           <div className="max-w-2xl">
             <p className="text-[11px] uppercase tracking-[0.32em] text-[var(--accent-gold)]">Lucknow Ecommerce</p>
             <h2 className="mt-3 font-serif text-3xl text-[var(--text-primary)] sm:text-4xl">
-              Real local content built to rank for attar buyers in Lucknow.
+              A storefront that feels premium to clients and natural to read.
             </h2>
           </div>
           <Link
@@ -126,23 +127,23 @@ export default function HomePage() {
             >
               <img src="/images/attar-1.jpg" alt="Collection page" className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-[var(--feature-card-overlay)]" />
-              <div className="absolute inset-x-0 bottom-0 p-7">
+              <div className="absolute inset-x-0 bottom-0 p-5 sm:p-7">
                 <p className="text-[11px] uppercase tracking-[0.3em] text-[var(--accent-gold)]">Collection</p>
-                <h3 className="mt-3 max-w-sm font-serif text-3xl text-[var(--feature-card-text)]">Attars for Chowk, Aminabad, Aliganj, and delivery across Lucknow.</h3>
+                <h3 className="mt-3 max-w-sm font-serif text-2xl text-[var(--feature-card-text)] sm:text-3xl">Attars selected for Chowk, Aminabad, Aliganj, and homes across Lucknow.</h3>
               </div>
             </Link>
 
-          <Link to="/collection?category=Rose%20Attar&segment=Women#catalog" className="border border-[var(--line-soft)] bg-[var(--ritual-card-surface)] p-7 transition hover:border-[var(--accent-sage)]">
+          <Link to="/collection?category=Rose%20Attar&segment=Women#catalog" className="border border-[var(--line-soft)] bg-[var(--ritual-card-surface)] p-6 transition hover:border-[var(--accent-sage)] sm:p-7">
             <Sparkles size={22} className="text-[var(--accent-sage)]" />
-            <p className="mt-6 text-[11px] uppercase tracking-[0.3em] text-[var(--accent-sage)]">Traditional Picks</p>
-            <h3 className="mt-3 font-serif text-2xl text-[var(--text-primary)]">Choose attars for Eid, Jumma, nikah gifting, and everyday wear.</h3>
-            <p className="mt-4 text-sm leading-7 text-[var(--text-secondary)]">This page helps customers browse by use case instead of only product names, which fits how local fragrance shoppers often buy.</p>
+            <p className="mt-6 text-[11px] uppercase tracking-[0.3em] text-[var(--accent-sage)]">Occasion Picks</p>
+            <h3 className="mt-3 font-serif text-2xl text-[var(--text-primary)]">Choose attars for Eid, Jumma, nikah gifting, and graceful daily wear.</h3>
+            <p className="mt-4 text-sm leading-7 text-[var(--text-secondary)]">Instead of making customers guess from names alone, the site guides them through moments, mood, and gifting needs.</p>
           </Link>
 
-          <Link to="/collection?category=Gift%20Hampers#catalog" className="border border-[var(--line-soft)] bg-[var(--concierge-card-surface)] p-7 transition hover:border-[var(--accent-rust)]">
+          <Link to="/collection?category=Gift%20Hampers#catalog" className="border border-[var(--line-soft)] bg-[var(--concierge-card-surface)] p-6 transition hover:border-[var(--accent-rust)] sm:p-7">
             <p className="text-[11px] uppercase tracking-[0.3em] text-[var(--accent-rust)]">WhatsApp Orders</p>
-            <h3 className="mt-9 font-serif text-2xl text-[var(--text-primary)]">Bulk gifting, family orders, and quick help for Lucknow buyers.</h3>
-            <p className="mt-4 text-sm leading-7 text-[var(--text-secondary)]">Useful for weddings, festive gifting, and customers who want direct attar suggestions before ordering.</p>
+            <h3 className="mt-9 font-serif text-2xl text-[var(--text-primary)]">Gift hampers, family orders, and quick help for clients who want a smooth buying experience.</h3>
+            <p className="mt-4 text-sm leading-7 text-[var(--text-secondary)]">Ideal for weddings, festive gifting, and buyers who prefer to confirm details on WhatsApp before placing the order.</p>
           </Link>
         </div>
       </section>
@@ -151,7 +152,7 @@ export default function HomePage() {
         <div className="mb-8 flex items-end justify-between gap-4">
           <div>
             <p className="text-[11px] uppercase tracking-[0.32em] text-[var(--accent-gold)]">Popular in Lucknow</p>
-            <h2 className="mt-3 font-serif text-3xl text-[var(--text-primary)] sm:text-4xl">Best-selling attars for traditional and modern fragrance buyers.</h2>
+            <h2 className="mt-3 font-serif text-3xl text-[var(--text-primary)] sm:text-4xl">Best-selling attars for traditional taste and modern gifting.</h2>
           </div>
           <Link to="/collection" className="text-[11px] uppercase tracking-[0.28em] text-[var(--text-secondary)] hover:text-[var(--text-primary)]">
             Shop all attars
@@ -191,7 +192,7 @@ export default function HomePage() {
           <p className="text-[11px] uppercase tracking-[0.32em] text-[var(--accent-gold)]">Lucknow Coverage</p>
           <h2 className="mt-3 font-serif text-3xl text-[var(--text-primary)] sm:text-4xl">Serving old Lucknow favourites and citywide ecommerce demand.</h2>
           <p className="mt-4 max-w-3xl text-sm leading-7 text-[var(--text-secondary)]">
-            We are shaping the content around strong local search intent for these Lucknow areas: {coreLucknowAreas.join(', ')}.
+            The site content now naturally includes the areas buyers search for most, including {coreLucknowAreas.join(', ')}.
           </p>
         </div>
         <div className="grid gap-5 lg:grid-cols-4">
