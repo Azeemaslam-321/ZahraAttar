@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Outfit', system-ui, sans-serif;
+}
+
+:root {
+  --bg-main: #090909;
+  --bg-elevated: #101010;
+  --panel-soft: rgba(255, 255, 255, 0.035);
+  --panel-highlight: rgba(216, 192, 140, 0.1);
+  --text-primary: #f4efe6;
+  --text-secondary: #cfc4b5;
+  --text-muted: #8d8273;
+  --accent-gold: #d8c08c;
+  --accent-rust: #8f4e38;
+  --accent-sage: #5f6f52;
+  --line-soft: rgba(216, 192, 140, 0.18);
+  --nav-surface: rgba(12, 12, 12, 0.82);
+  --overlay-surface: rgba(10, 10, 10, 0.95);
+  --footer-surface: #0b0b0b;
+  --nav-border: rgba(255, 255, 255, 0.1);
+  --control-surface: rgba(255, 255, 255, 0.05);
+  --nav-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  --badge-text: #ffffff;
+  --hero-image-opacity: 0.3;
+  --hero-overlay-vertical: linear-gradient(180deg, rgba(8, 8, 8, 0.45), rgba(8, 8, 8, 0.96));
+  --hero-overlay-horizontal: linear-gradient(90deg, rgba(8, 8, 8, 0.95), rgba(8, 8, 8, 0.4), rgba(8, 8, 8, 0.92));
+  --hero-stat-surface: rgba(255, 255, 255, 0.05);
+  --feature-card-overlay: linear-gradient(180deg, rgba(9, 9, 9, 0.18), rgba(9, 9, 9, 0.92));
+  --feature-card-text: #ffffff;
+  --ritual-card-surface: linear-gradient(180deg, rgba(95, 111, 82, 0.12), rgba(255, 255, 255, 0.02));
+  --concierge-card-surface: linear-gradient(180deg, rgba(143, 78, 56, 0.18), rgba(255, 255, 255, 0.02));
+}
+
+[data-theme='light'] {
+  --bg-main: #f7f1e7;
+  --bg-elevated: #fffaf2;
+  --panel-soft: rgba(255, 255, 255, 0.72);
+  --panel-highlight: rgba(143, 78, 56, 0.1);
+  --text-primary: #201816;
+  --text-secondary: #5b4b43;
+  --text-muted: #8d776d;
+  --accent-gold: #9c7443;
+  --accent-rust: #9c583f;
+  --accent-sage: #5d7453;
+  --line-soft: rgba(120, 93, 64, 0.16);
+  --nav-surface: rgba(255, 250, 242, 0.88);
+  --overlay-surface: rgba(255, 248, 238, 0.96);
+  --footer-surface: #f4ecdf;
+  --nav-border: rgba(120, 93, 64, 0.14);
+  --control-surface: rgba(255, 255, 255, 0.72);
+  --nav-shadow: 0 18px 46px rgba(115, 87, 63, 0.12);
+  --badge-text: #fffaf2;
+  --hero-image-opacity: 0.18;
+  --hero-overlay-vertical: linear-gradient(180deg, rgba(247, 241, 231, 0.22), rgba(247, 241, 231, 0.9));
+  --hero-overlay-horizontal: linear-gradient(90deg, rgba(247, 241, 231, 0.9), rgba(247, 241, 231, 0.3), rgba(247, 241, 231, 0.82));
+  --hero-stat-surface: rgba(255, 255, 255, 0.62);
+  --feature-card-overlay: linear-gradient(180deg, rgba(247, 241, 231, 0.05), rgba(247, 241, 231, 0.78));
+  --feature-card-text: #201816;
+  --ritual-card-surface: linear-gradient(180deg, rgba(93, 116, 83, 0.1), rgba(255, 255, 255, 0.45));
+  --concierge-card-surface: linear-gradient(180deg, rgba(156, 88, 63, 0.1), rgba(255, 255, 255, 0.45));
+}
+
+html {
+  scroll-behavior: smooth;
+  background:
+    radial-gradient(circle at top, rgba(143, 78, 56, 0.18), transparent 32%),
+    radial-gradient(circle at 20% 80%, rgba(95, 111, 82, 0.12), transparent 30%),
+    var(--bg-main);
+}
+
+body {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.015), transparent 20%),
+    var(--bg-main);
+  color: var(--text-primary);
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.012) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.012) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: radial-gradient(circle at center, black 32%, transparent 82%);
+  opacity: 0.16;
+}
+
+[data-theme='light'] body::before {
+  opacity: 0.1;
+}
+
+#root {
+  position: relative;
+  isolation: isolate;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(216, 192, 140, 0.28);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(216, 192, 140, 0.45);
+}
+
+::selection {
+  background: rgba(216, 192, 140, 0.22);
+  color: #fff8ef;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent-gold);
+  outline-offset: 2px;
+}
+
+img {
+  -webkit-user-drag: none;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+body,
+button,
+input,
+textarea,
+a,
+div,
+section {
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease;
+}
